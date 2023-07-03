@@ -1,0 +1,5 @@
+
+ npm install -g json-server 
+ json-server --watch ./data/db.json
+ run this before starting app ,this will show the page containing trips you can see the link in resource when you enter this terminal
+

@@ -1,24 +1,15 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Triplist from './components/Triplist';
 
 function App() {
+  const [showTrips , setTrips] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className="App">
+  { showTrips &&  (<button onClick={()=>setTrips(false)}> Hide Trips</button>)}
+  { !showTrips  && (<button onClick={()=>setTrips(true)}>show Trips</button>)}
+   {showTrips && <Triplist/>}
+   </div>
   );
 }
 
